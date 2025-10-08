@@ -26,7 +26,7 @@ const App = () => {
         const response = await axios('https://crio-location-selector.onrender.com/countries');
         setCountry(response.data);
       } catch (e) {
-        console.error(e);
+        console.error("Error in country api",e);
       }
     }
     getCountry();
@@ -39,7 +39,7 @@ const App = () => {
         const response = await axios(`https://crio-location-selector.onrender.com/country=${selected.country}/states`);
         setState(response.data);
       } catch (e) {
-        console.error(e);
+        console.error("Error in state api",e);
       }
     }
     getState();
@@ -52,7 +52,7 @@ const App = () => {
         const response = await axios(`https://crio-location-selector.onrender.com/country=${selected.country}/state=${selected.state}/cities`);
         setCity(response.data);
       } catch (e) {
-        console.error(e);
+        console.error("Error in city api",e);
       }
     }
     getState();
