@@ -69,18 +69,21 @@ const App = () => {
     <div className={Style.container}>
 
       <select name='country' onChange={changeHandler}>
-      {
+        <option>Select Country</option>
+      {  
           country?.map((name) => { return <option key={name} value={name}>{name}</option> })
       }
       </select>
 
       <select name='state' onChange={changeHandler} disabled={selected.country===''?true:false}>
+         <option>Select State</option>
         {
           state?.map((name) => { return <option key={name} value={name}>{name}</option> })
         }
       </select>
 
       <select name='city' onChange={changeHandler} disabled={selected.state===''?true:false}>
+        <option>Select City</option>
         {
           city?.map((name) => { return <option key={name} value={name}>{name}</option> })
         }
